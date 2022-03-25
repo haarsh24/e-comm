@@ -1,0 +1,246 @@
+@import url("https://litui.netlify.app/components/components-style.css");
+
+.input-search {
+    margin: 0;
+    width:15rem;
+  } 
+  .header{
+    margin-bottom: 0;
+    /* padding-bottom: 0; */
+    width:100%;
+    height: fit-content;
+    border:none;
+    position: relative;
+  }
+  .logo{
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .landing-page-img {
+    width: 150%;
+    height: fit-content;
+  }
+  
+  .product-img{
+    width:15rem;
+    height:20rem;
+  }
+  .index-title {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  .front-display-div {
+    justify-content: flex-start;
+    padding: 0;
+    margin:0;
+  }
+  .collection-img {
+    width: 15rem;
+    height: 20rem;
+  }
+  
+  .product-collection-detail {
+    justify-content: space-between;
+  }
+  .collection-detail:hover {
+    box-shadow: var(--shadow);
+  }
+  .product-collection {
+    width: 18rem;
+  }
+  .product-detail-wrapper{
+    margin-left: 7rem;
+  }
+  @media only screen and (max-width: 600px) {
+    * {
+      font-size: 75%;
+    }
+    .product-collection {
+      flex-wrap: wrap;
+    }
+    .product-detail-wrapper{
+      margin-left: 0;
+    }
+    .landing-page-img {
+      width: 100%;
+      height: fit-content;
+    }
+    .input-search {
+      display: none;
+    }
+    .products-wrapper{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  @import url("https://litui.netlify.app/components/components-style.css");
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+:root {
+  --primary-color: #6b46c1;
+  --secondary-color: #0D1117;
+  --shadow-color: #bbb1c0;
+  --text-color: #fafafa;
+  --background-color: #ddd7e0;
+  --shadow: 5px 5px 9px #392566, -5px -5px 9px #9d67ff;
+  --shadow-dark:#392566;
+  --shadow-light:#9d67ff;
+}
+* {
+  color: var(--text-color);
+}
+body {
+  background-color: var(--secondary-color);
+}
+.ml-2 {
+  margin-left: 2rem;
+}
+.p1 {
+  padding: 0 1rem;
+}
+input{
+  color: var(--secondary-color);
+}
+.btn {
+  border: none !important;
+}
+.form {
+  border: none !important;
+  padding: 0;
+}
+.logo {
+  color: var(--primary-color);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0 0 1rem 1rem;
+  position: sticky;
+  top: 0rem;
+}
+
+.m3 {
+  margin: 3rem;
+}
+
+.m1 {
+  margin: 1rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+}
+.m2 {
+  margin: 2rem;
+}
+.m1 {
+  margin: 1rem;
+}
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.p5 {
+  padding: 5rem;
+}
+
+.background {
+  background-color: var(--background-color);
+}
+.box-shadow-drawer {
+  box-shadow: 1px 1px 1px 1px var(--shadow-color);
+}
+
+.mb-1 {
+  margin-bottom: 2rem;
+}
+
+.m-tb-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.btn-add-to-cart {
+  /* background-color: var(--primary-color);
+  color:var(--white); */
+  border-radius: 0;
+  width: 13rem;
+  margin-bottom: 1rem;
+}
+
+.item {
+  border-radius: 0.2rem;
+  /* padding: 0;
+ margin: 0; */
+}
+
+.m3 {
+  margin: 3rem;
+}
+
+.m2 {
+  margin: 2rem;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.p5 {
+  padding: 5rem;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 15px;
+  background: var(--primary-color);
+  box-shadow: 5px 5px 9px var(--shadow-dark), -5px -5px 9px var(--shadow-light);
+}
+.card-container {
+  border-radius: 15px;
+  background: var(--primary-color);
+  box-shadow: 5px 5px 1px var(--shadow-dark), -5px -5px 1px var(--shadow-light);
+}
+img{
+  border-radius: 15px;
+}
+.center{
+  align-items: center;
+}
+.logo{
+  font-family: 'Festive', cursive;
+}
+.name-tag{
+  color:var(--primary-color);
+
+}
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.secondary {
+  color: var(--primary-color);
+  background-color: var(--shadow-color);
+}
+
+.products-wrapper{
+  margin-left: 3rem;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+

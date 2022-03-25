@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+:root {
+  --primary-color: #6e54c4;
+  --secondary-color: #0D1117;
+  --shadow-color: #bbb1c0;
+  --text-color: #fafafa;
+  --background-color: #ddd7e0;
+  --shadow: 5px 5px 9px #392566, -5px -5px 9px #9d67ff;
+  --shadow-dark:#392566;
+  --shadow-light:#9d67ff;
+}
+* {
+  color: var(--text-color);
+}
+body {
+  background-color: var(--secondary-color);
+}
+.ml-2 {
+  margin-left: 2rem;
+}
+.p1 {
+  padding: 0 1rem;
+}
+input{
+  color: var(--secondary-color);
+}
+.btn {
+  border: none !important;
+}
+.form {
+  border: none !important;
+  padding: 0;
+}
+.logo {
+  color: var(--primary-color);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0 0 1rem 1rem;
+  position: sticky;
+  top: 0rem;
+}
+
+.m3 {
+  margin: 3rem;
+}
+
+.m1 {
+  margin: 1rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+}
+.m2 {
+  margin: 2rem;
+}
+.m1 {
+  margin: 1rem;
+}
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.p5 {
+  padding: 5rem;
+}
+
+.background {
+  background-color: var(--background-color);
+}
+.box-shadow-drawer {
+  box-shadow: 1px 1px 1px 1px var(--shadow-color);
+}
+
+.mb-1 {
+  margin-bottom: 2rem;
+}
+
+.m-tb-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.btn-add-to-cart {
+  /* background-color: var(--primary-color);
+  color:var(--white); */
+  border-radius: 0;
+  width: 13rem;
+  margin-bottom: 1rem;
+}
+
+.item {
+  border-radius: 0.2rem;
+  /* padding: 0;
+ margin: 0; */
+}
+
+.m3 {
+  margin: 3rem;
+}
+
+.m2 {
+  margin: 2rem;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.p5 {
+  padding: 5rem;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 15px;
+  background: var(--primary-color);
+  box-shadow: 5px 5px 9px var(--shadow-dark), -5px -5px 9px var(--shadow-light);
+}
+.card-container {
+  border-radius: 15px;
+  background: var(--primary-color);
+  box-shadow: 5px 5px 1px var(--shadow-dark), -5px -5px 1px var(--shadow-light);
+}
+img{
+  border-radius: 15px;
+}
+.center{
+  align-items: center;
+}
+.logo{
+  font-family: 'Festive', cursive;
+}
+.name-tag{
+  color:var(--primary-color);
+
+}
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.secondary {
+  color: var(--primary-color);
+  background-color: var(--shadow-color);
+}
+
+.products-wrapper{
+  margin-left: 3rem;
+}
