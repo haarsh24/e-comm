@@ -20,7 +20,7 @@ const Homepage =(props)=>{
     <HeroSection/>
     
     <ProductByCategory/>
-   <ProductsList/>
+  
     <Footer/>
         </>
     )
