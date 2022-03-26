@@ -1,0 +1,15 @@
+.caraousel-container{
+ 
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.caraousel-img{
+    width:80rem;
+    height:40rem;
+   
+}
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+}
