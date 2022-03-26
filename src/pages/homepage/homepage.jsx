@@ -17,8 +17,8 @@ const Homepage =(props)=>{
   
   
     <Navbar/>
-    <Carousel/>
     <HeroSection/>
+    
     <ProductByCategory/>
    <ProductsList/>
     <Footer/>

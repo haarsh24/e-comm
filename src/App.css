@@ -11,5 +11,16 @@
 }
 .product-list{
     display: flex;
+    width: 100%;
+
+    position: relative;
+}
+.product{
+    display: flex;
     flex-wrap: wrap;
+   
+}
+.filters-container{
+    
+    width:40rem;
 }
