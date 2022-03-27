@@ -13,7 +13,6 @@ const ProductsList = () =>{
 
     return(
         <>
-        <Navbar/>
         <div className="product-list">
         <div className="filters-container">
         <Filters  /></div>

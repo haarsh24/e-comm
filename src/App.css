@@ -24,3 +24,9 @@
     
     width:40rem;
 }
+.auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}

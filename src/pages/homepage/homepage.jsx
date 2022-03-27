@@ -16,7 +16,7 @@ const Homepage =(props)=>{
         <>
   
   
-    <Navbar/>
+  
     <HeroSection/>
     
     <ProductByCategory/>
