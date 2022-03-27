@@ -47,7 +47,7 @@ const CartProvider = ({
     rating: 3,
     category: ""
   });
-  console.log("product data ", cartState.productsData);
+//  console.log("product data ", cartState.productsData);
   return (
     <CartContext.Provider value = {
       {

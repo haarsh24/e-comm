@@ -3,15 +3,16 @@ import { CheckoutCard } from "../../components/checkoutCard/checkoutCard";
 import { useCart } from "../../contexts/cart-context";
 
 const Cart = () => {
-  const { cartState:{ cartItem, productsData }}= useCart();
+  const { cartState:{ cartItem }}= useCart();
 
   return (
     <>
       <div className=" flex space-around">
-        <div class="cart-wrapper ">
-         
-            {cartItem.map(props =>  <CartCard item={props} key={props._id} />)}
-                </div>
+        <div className="cart-wrapper ">
+          {cartItem.map((props) => (
+            <CartCard item={props} key={props._id} />
+          ))}
+        </div>
         <CheckoutCard />
       </div>
     </>

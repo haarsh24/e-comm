@@ -18,7 +18,7 @@ const getRequestDataFromServer = async (url, dispatch) => {
     }
 }
 
-const updateCartItem = async (item, token) => {
+const updateCartItem = async (data, token) => {
     try {
         const res = await axios.post("/api/user/cart", {
             product: {
@@ -63,7 +63,7 @@ const IncreaseCartQuantity = async (data, token) => {
     }
 }
 
-const decreaseCartQuantity = async (data, token) => {
+const DecreaseCartQuantity = async (data, token) => {
     try {
         const res = await axios.post(`/api/user/cart/${data._id}`, {
             action: {
@@ -87,5 +87,5 @@ export {
     getRequestDataFromServer,
     updateCartItem,
     IncreaseCartQuantity,
-    decreaseCartQuantity
+    DecreaseCartQuantity
 }

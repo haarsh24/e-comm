@@ -1,5 +1,5 @@
 import {
-  IncreaseCartHandler,
+  IncreaseCartQuantity,
   DecreaseCartQuantity,
 } from "../../utilities/helpers/api-calls-helper";
 import { useCart, cartDispatch } from "../../contexts/cart-context";
@@ -9,12 +9,18 @@ const CartCard = (props) => {
     const {
       authState: { token },
     } = useAuth();
-  const { cartDispatch } = useCart();
+ 
+  const {
+    cartState: { cartItem, productsData },
+    cartDispatch,
+   
+  } = useCart();
+
   const data = props.item;
 
   const increaseCartHandler = () => {
     cartDispatch({ type: "INCREASE_CART_ITEM", payload: data });
-    IncreaseCartHandler(data, token);
+    IncreaseCartQuantity(data, token);
   };
 
   const decreaseCartHandler = () => {

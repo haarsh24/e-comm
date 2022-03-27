@@ -10,7 +10,7 @@ const cartReducer=(state,dispatch)=>{
                    qty: 1
                }]
            }
-         case "INCREASE_CART_QUANTITY":
+         case "INCREASE_CART_ITEM":
          return {
              ...state,
              cartItem: state.cartItem.map((item) => item.id === dispatch.payload.id ? {
@@ -18,7 +18,7 @@ const cartReducer=(state,dispatch)=>{
                  qty: item.qty + 1
              } : item)
          }
-        case "DECREASE_CART_QUANTITY":
+        case "DECREASE_CART_ITEM":
             return {
                 ...state,
                 cartItem: state.cartItem.map((item) => item.id === dispatch.payload.id ? {
