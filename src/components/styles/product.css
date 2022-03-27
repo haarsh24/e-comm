@@ -11,6 +11,7 @@
   align-items: flex-start;
   row-gap: 1.5rem;
   color: var(--text-color);
+  position: relative;
 }
 .product-title {
   top: 0;
@@ -41,4 +42,14 @@
     flex-wrap: wrap;
   }
   
+}
+.product-rating {
+  position: absolute;
+  background-color: var(--primary-color);
+  z-index: 333;
+  width:3rem;
+  height: 3rem;
+  font-size: large;
+  padding:0.5rem;
+  border-radius:0 0rem 1rem 0;
 }

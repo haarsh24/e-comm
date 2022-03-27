@@ -1,17 +1,29 @@
 import { Filters } from "../../components/filters/filters"
 import { ProductCard } from "../../components/product-card/product-card"
-import { useCart } from "../../contexts/cart-context"
+import { useCart } from "../../contexts/cart-context";
+import { Navbar } from "../../components/navbar/navbar";
+import { FilterFunction } from "../../utilities/filterFunction";
+import { Footer } from "../../components/footer/footer";
+
 const ProductsList = () =>{
     const {cartState} = useCart();
     const product = cartState.productsData;
-    console.log(cartState);
+    const {  cartState: { productsData }, filterState: { sort,priceRange, rating,category} } = useCart()
+    const data = FilterFunction(productsData, sort,priceRange,rating,category)
+
     return(
         <>
+        <Navbar/>
         <div className="product-list">
-        <Filters/>
-        {product.map((item)=><ProductCard singleProduct={item} />)
+        <div className="filters-container">
+        <Filters  /></div>
+        <div className="product">
+        {data.map((item)=><ProductCard singleProduct={item} />)
         }
         </div>
+        
+        </div>
+        <Footer/>
         </>
     )
 }
