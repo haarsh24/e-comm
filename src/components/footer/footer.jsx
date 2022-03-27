@@ -1,4 +1,5 @@
 import "../styles/main.css";
+import { Link } from "react-router-dom";
 
 const Footer = () =>{
     return(
@@ -6,7 +7,7 @@ const Footer = () =>{
         <footer className="footer">
         <h2>
             Designed and Developed by
-            <a className="name-tag" href="https://kumarharsh.netlify.app/"> harsh </a>
+            <Link className="name-tag h2" to="https://kumarharsh.netlify.app/"> harsh </Link>
         </h2>
     </footer>
         </>
