@@ -46,7 +46,7 @@ const Signup = ()=>{
                 />
 
                 <label className="ml-2" htmlFor="name"> Password </label>
-                <input className="input-text " type="email" value={password} placeholder="Enter your Password here"
+                <input className="input-text " type="password" value={password} placeholder="Enter your Password here"
                  onChange={(e)=> signupDispatch({type:"SET_PASSWORD",payload:e.target.value})}/>
                 <button className="input-text btn  h4" type="submit">Sign up</button>
                 <p className=" input-text small-text">Already have an Account <span id="login" className="link-redirect "><Link

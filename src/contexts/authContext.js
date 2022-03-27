@@ -8,7 +8,7 @@ const AuthProvider = ({ children }) => {
 const [authState, authDispatch] = useReducer(authReducer, {
     isLogin:false,
     token:"",
-    userDetails:""
+    userData:""
 });
 // isLogin: (tokenDetails !== ''),
 //     token: tokenDetails,
