@@ -1,8 +1,25 @@
 import "../styles/main.css";
+import {useAuth} from "../../contexts/authContext"
+import { useNavigate } from "react-router-dom";
+import {useCart} from "../../contexts/cart-context"
+import {updateCartItem} from "../../utilities/helpers/api-calls-helper"
 
 const ProductCard = (props)=>{
     const item = props.singleProduct;
     console.log(item);
+    const navigate = useNavigate();
+    const {authState:{isLogin, token}}= useAuth();
+    const {cartDispatch} = useCart();
+
+    const addToCardHandler=()=>{
+       if(isLogin){
+        console.log("logged in ")
+             cartDispatch({type:"ADD_TO_CART", payload:item})
+             updateCartItem(item,token);
+       }else{       
+       navigate("/login") 
+       }
+    }
 
     return(
         <>
@@ -19,7 +36,7 @@ const ProductCard = (props)=>{
                         ₹ {item.price}
                         <i className="fa fa-heart-o "></i>
                     </div>
-                    <button className="btn btn-add-to-cart  mb-1">
+                    <button className="btn btn-add-to-cart  mb-1" onClick={addToCardHandler} >
                         Add to Cart
                     </button>
 

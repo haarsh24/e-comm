@@ -1,32 +1,32 @@
-.caraousel-container{
- 
-    display: flex;
-    justify-content: center;
-    margin: auto;
+.caraousel-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
-.caraousel-img{
-    width:80rem;
-    height:40rem;
-   
+.caraousel-img {
+  width: 80rem;
+  height: 40rem;
 }
-.product-list{
-    display: flex;
-    width: 100%;
+.product-list {
+  display: flex;
+  width: 100%;
 
-    position: relative;
+  position: relative;
 }
-.product{
-    display: flex;
-    flex-wrap: wrap;
-   
+.product {
+  display: flex;
+  flex-wrap: wrap;
 }
-.filters-container{
-    
-    width:40rem;
+.filters-container {
+  width: 40rem;
 }
-.auth{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity {
+  background-color: var(--secondary-color);
+  color: var(--white);
 }

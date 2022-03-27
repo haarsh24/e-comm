@@ -21,7 +21,7 @@ const HeroSection =()=>{
                         collection.
                         No questions asked returns. </div>
                     <div className="m2">
-                        <button className="btn h4 p2">
+                        <button className="btn h2 p2">
                             <Link to="/products"> Shop Now</Link>
                            </button>
                     </div>

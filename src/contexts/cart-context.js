@@ -14,15 +14,25 @@ import {
 import {
   filterReducer
 } from "../reducer/filterReducer";
+
+import {
+  useAuth
+} from './authContext';
+
 const CartContext = createContext();
 
 const CartProvider = ({
   children
 }) => {
 
+  
+  const { cart  } = JSON.parse(localStorage.getItem("userData")) || {
+    cart: []
+  }
+
   const [cartState, cartDispatch] = useReducer(cartReducer, {
     productsData: [],
-    cartItem: []
+    cartItem:cart
   })
 
   useEffect(() => {
@@ -35,11 +45,11 @@ const CartProvider = ({
     sort: "",
     priceRange: 12000,
     rating: 3,
-    category:""
+    category: ""
   });
   console.log("product data ", cartState.productsData);
-  return ( 
-    < CartContext.Provider value = {
+  return (
+    <CartContext.Provider value = {
       {
         cartState,
         cartDispatch,
@@ -49,8 +59,7 @@ const CartProvider = ({
       }
     } > {
       children
-    } 
-    </CartContext.Provider>
+    } </CartContext.Provider>
   )
 }
 
