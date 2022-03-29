@@ -20,7 +20,7 @@ return (
     <div className="caraousel-container">
         <img
         alt="carousel-image"
-        className="image-responsive caraousel-img"
+        className="image image-responsive caraousel-img"
         src={carouselImage[displayImage]}
         />
     </div>
