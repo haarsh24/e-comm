@@ -10,6 +10,11 @@ const cartReducer=(state,dispatch)=>{
                    qty: 1
                }]
            }
+        case "REMOVE_FROM_CART":
+            return {
+                ...state,
+                cartItem: state.cartItem.filter((item) => item.id !== dispatch.payload.id)
+            }
          case "INCREASE_CART_ITEM":
          return {
              ...state,

@@ -6,7 +6,9 @@
 .caraousel-img {
   width: 80rem;
   height: 40rem;
+  border-radius: 2rem;
 }
+
 .product-list {
   display: flex;
   width: 100%;
@@ -29,4 +31,15 @@
 .quantity {
   background-color: var(--secondary-color);
   color: var(--white);
+}
+
+.badge-wrapper {
+  position: absolute;
+}
+.badge {
+  position: relative;
+  top: 0.5rem;
+}
+.hidden {
+  display: none;
 }

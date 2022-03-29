@@ -22,7 +22,7 @@ const updateCartItem = async (data, token) => {
     try {
         const res = await axios.post("/api/user/cart", {
             product: {
-                ...item,
+                ...data,
             }
         }, {
             headers: {
@@ -38,6 +38,22 @@ const updateCartItem = async (data, token) => {
     } catch (error) {
         console.log(error)
     }
+}
+const RemoveFromCart = async (data, token) => {
+    try {
+        const res = await axios.delete(`/api/user/cart/${data._id}`, {
+            headers: {
+                authorization: token
+            }
+        })
+        const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
+        dataToUpdate.cart = [...res.data.cart]
+        localStorage.setItem('userData', JSON.stringify(dataToUpdate))
+        }
+        catch {
+        console.log(error);
+        }
+    
 }
 
 const IncreaseCartQuantity = async (data, token) => {
@@ -65,6 +81,7 @@ const IncreaseCartQuantity = async (data, token) => {
 
 const DecreaseCartQuantity = async (data, token) => {
     try {
+        
         const res = await axios.post(`/api/user/cart/${data._id}`, {
             action: {
                 type: "decrement"
@@ -87,5 +104,6 @@ export {
     getRequestDataFromServer,
     updateCartItem,
     IncreaseCartQuantity,
-    DecreaseCartQuantity
+    DecreaseCartQuantity,
+    RemoveFromCart
 }
