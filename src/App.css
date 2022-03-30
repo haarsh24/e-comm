@@ -12,7 +12,6 @@
 .product-list {
   display: flex;
   width: 100%;
-
   position: relative;
 }
 .product {
@@ -60,9 +59,45 @@
   flex-direction: column-reverse;
   flex-wrap: nowrap;
 }
-.drawer{
+.drawer {
   z-index: 11;
 }
-.hide-filters{
-  display: none!important;
+.hide-filters {
+  display: none !important;
+}
+.btn-filter {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .product-list {
+    flex-direction: column;
+    margin-left: 6rem;
+  }
+  .btn-filter {
+    display: block;
+  }
+  .cart-container {
+    flex-direction: column;
+  }
+}
+.badge {
+  position: relative;
+  /* margin: 3rem; */
+  /* z-index:2; */
+}
+.badge-icon {
+  position: absolute;
+  background-color: var(--primary-color);
+  text-align: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  /* z-index: 3; */
+  bottom: 3.5rem;
+  margin-left: -1rem;
+}
+
+.wishlist-product {
+ display: flex;
+ flex-direction: row;
 }

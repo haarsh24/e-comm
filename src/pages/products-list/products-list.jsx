@@ -16,7 +16,7 @@ const ProductsList = () => {
 
   return (
     <>
-      <div className="product-list">
+      <div className="product-list ">
         <div className="filters-container">
           <Filters />
         </div>

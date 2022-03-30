@@ -13,7 +13,7 @@ const Cart = () => {
         
        
        : (
-        <div className=" flex space-around">
+        <div className=" flex space-around cart-container">
           <div className="cart-wrapper ">
             {cartItem.map((props) => (
               <CartCard item={props} key={props._id} />

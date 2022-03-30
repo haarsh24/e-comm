@@ -19,7 +19,7 @@ const CheckoutCard = () => {
       {cartItem.length === 0 ? (
         <h2 className="heading"> Please Add Items in the Cart</h2>
       ) : (
-        <div className="order-details-wrapper  ">
+        <div className="order-details-wrapper  m1">
           <div className="order-detail card-container p2 m-tb-1 ">
             <div className="h2">Price Detail</div>
 

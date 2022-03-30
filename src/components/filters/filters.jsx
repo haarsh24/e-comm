@@ -7,7 +7,7 @@ const Filters = () => {
     filterDispatch,
     filterState: { priceRange },
   } = useCart();
-  const [showFilter, setShowFilter] = useState(false);
+  const [showFilter, setShowFilter] = useState(true);
   const showFilterHandler = () => {
     showFilter ? setShowFilter(false) : setShowFilter(true);
     console.log(showFilter);
@@ -15,14 +15,14 @@ const Filters = () => {
   return (
     <>
       <aside className="filters-wrapper  flex-column p1">
-        <button className="btn btn-filter m-tb-1" onClick={showFilterHandler}>
-          Show Filter
+        <button className="btn btn-filter m1" onClick={showFilterHandler}>
+          {showFilter ? "Show" : "Hide"} Filter
         </button>
         <form
           className={
             showFilter
-              ? "drawer flex-column "
-              : "drawer flex-column hide-filters"
+              ? "drawer flex-column hide-filters"
+              : "drawer flex-column "
           }
         >
           <div className="heading h2">Filters</div>
