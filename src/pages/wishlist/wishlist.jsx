@@ -8,17 +8,19 @@ const Wishlist = () => {
   console.log(wishlistItem);
   return (
     <>
-      {wishlistItem.length === 0 ? (
-        <div className="heading h2">No Items in the Wishlist</div>
-      ) : (
-        wishlistItem.map((props) => (
-          <div className="flex-column wishlist-product">
-            <span className="product">
-              <WishlistItem item={props} key={props._id} />
-            </span>
-          </div>
-        ))
-      )}
+      <div className="wishlist-container">
+        {wishlistItem.length === 0 ? (
+          <div className="heading h2 wishlist-heading">No Items in the Wishlist</div>
+        ) : (
+          wishlistItem.map((props) => (
+            <div className="flex-column wishlist-product">
+              <div className="product">
+                <WishlistItem item={props} key={props._id} />
+              </div>
+            </div>
+          ))
+        )}
+      </div>
     </>
   );
 };

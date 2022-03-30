@@ -1,13 +1,30 @@
 import { useCart } from "../../contexts/cart-context";
 import "../styles/main.css";
+import { useState } from "react";
 
 const Filters = () => {
-  const { filterDispatch, filterState: {  priceRange } } = useCart()
-    
+  const {
+    filterDispatch,
+    filterState: { priceRange },
+  } = useCart();
+  const [showFilter, setShowFilter] = useState(true);
+  const showFilterHandler = () => {
+    showFilter ? setShowFilter(false) : setShowFilter(true);
+    console.log(showFilter);
+  };
   return (
     <>
       <aside className="filters-wrapper  flex-column p1">
-        <form className="drawer flex-column" action="">
+        <button className="btn btn-filter m1" onClick={showFilterHandler}>
+          {showFilter ? "Show" : "Hide"} Filter
+        </button>
+        <form
+          className={
+            showFilter
+              ? "drawer flex-column hide-filters"
+              : "drawer flex-column "
+          }
+        >
           <div className="heading h2">Filters</div>
 
           <label className=" h3 m1" for="">
