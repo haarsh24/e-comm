@@ -54,7 +54,8 @@ const CartProvider = ({
     sort: "",
     priceRange: 12000,
     rating: 3,
-    category: ""
+    category: "",
+    search:""
   });
   //  console.log("product data ", cartState.productsData);
   return (

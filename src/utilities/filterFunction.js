@@ -1,4 +1,4 @@
-const FilterFunction = (productsData, sort,priceRange,rating, category) => {
+const FilterFunction = (productsData, sort, priceRange, rating, category, search) => {
     let filteredProducts = productsData;
 
     if (sort) {
@@ -13,6 +13,9 @@ const FilterFunction = (productsData, sort,priceRange,rating, category) => {
     }
     if (category.length !== 0) {
         filteredProducts = filteredProducts.filter((item => category.includes(item.category)))
+    }
+    if (search) {
+        filteredProducts = filteredProducts.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
     }
 
     return filteredProducts;
