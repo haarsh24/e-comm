@@ -6,10 +6,15 @@ import { useAuth } from "../../contexts/authContext";
 
 const Navbar = ()=>{
     const { authState } = useAuth();
+
     const {
       cartState: { cartItem },
       filterDispatch,
     } = useCart();
+
+  const { cartState: { cartItem } } = useCart();
+  const {wishlistState: {wishlistItem}} = useCart();
+
     console.log(cartItem.length);
     console.log(authState);
     return (
@@ -40,6 +45,12 @@ const Navbar = ()=>{
             <Link to="/wishlist">
               {" "}
               <i className="fa fa-heart-o fa-2x " aria-hidden="true"></i>
+              <span className={wishlistItem.length === 0 ? "hidden" : "h5"}>
+                {wishlistItem.length}
+              </span>
+            </Link>
+
+            
             </Link>
 
             <Link to="/cart">

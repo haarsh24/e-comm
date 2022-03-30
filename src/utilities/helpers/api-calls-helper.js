@@ -100,10 +100,38 @@ const DecreaseCartQuantity = async (data, token) => {
         console.log(error);
     }
 }
+
+const updateWishlistItem = async (data, token) => {
+    try {
+         const res = await axios.post("/api/user/wishlist", {
+             product: {
+                 ...data,
+             }
+         }, {
+             headers: {
+                 authorization: token
+             }
+         })
+         console.log(res);
+         const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
+         dataToUpdate.wishlist = [...res.data.wishlist]
+         localStorage.setItem('userData', JSON.stringify(dataToUpdate))
+         console.log(dataToUpdate);
+    }
+    catch {
+        console.log(error);
+    }
+
+}
+const RemoveFromWishlist = async (data, token) => {
+}
+
 export {
     getRequestDataFromServer,
     updateCartItem,
     IncreaseCartQuantity,
     DecreaseCartQuantity,
-    RemoveFromCart
+    RemoveFromCart,
+    updateWishlistItem,
+    RemoveFromWishlist
 }

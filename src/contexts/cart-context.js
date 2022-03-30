@@ -15,9 +15,11 @@ import {
   filterReducer
 } from "../reducer/filterReducer";
 
-import {
-  useAuth
+import { useAuth
 } from './authContext';
+import {
+  wishlistReducer
+} from '../reducer/wishlistReducer';
 
 const CartContext = createContext();
 
@@ -25,14 +27,21 @@ const CartProvider = ({
   children
 }) => {
 
-  
-  const { cart  } = JSON.parse(localStorage.getItem("userData")) || {
-    cart: []
+
+  const {
+    cart,
+    wishlist
+  } = JSON.parse(localStorage.getItem("userData")) || {
+    cart: [],
+    wishlist: []
   }
 
+  const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, {
+    wishlistItem: wishlist
+  });
   const [cartState, cartDispatch] = useReducer(cartReducer, {
     productsData: [],
-    cartItem:cart
+    cartItem: cart
   })
 
   useEffect(() => {
@@ -48,19 +57,20 @@ const CartProvider = ({
     category: "",
     search:""
   });
-//  console.log("product data ", cartState.productsData);
+  //  console.log("product data ", cartState.productsData);
   return (
-    <CartContext.Provider value = {
+    <CartContext.Provider value={
       {
         cartState,
         cartDispatch,
         filterState,
         filterDispatch,
-
+        wishlistState,
+        wishlistDispatch
       }
-    } > {
-      children
-    } </CartContext.Provider>
+    } >
+      {children}
+      </CartContext.Provider>
   )
 }
 
