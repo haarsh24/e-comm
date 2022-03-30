@@ -60,3 +60,9 @@
   flex-direction: column-reverse;
   flex-wrap: nowrap;
 }
+.drawer{
+  z-index: 11;
+}
+.hide-filters{
+  display: none!important;
+}
