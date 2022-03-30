@@ -26,6 +26,7 @@ const Filters = () => {
           }
         >
           <div className="heading h2">Filters</div>
+
           <label className=" h3 m1" for="">
             Select Category
           </label>
@@ -113,6 +114,12 @@ const Filters = () => {
               }
             />
           </div>
+          <button
+            className="btn m1"
+            onClick={() => filterDispatch({ type: "RESET_ALL_FILTERS" })}
+          >
+            RESET FILTERS
+          </button>
         </form>
       </aside>
     </>

@@ -16,6 +16,11 @@ const filterReducer = (state , action) => {
                             [...state.category.filter(item => item !== action.payload)]
     
                     } : { ...state, category: [...state.category, action.payload] }
+        case "RESET_ALL_FILTERS":
+            return { ...state, sort: "", priceRange: 12000, rating: 3, category: [] ,search:""}
+        case "FILTER_BY_SEARCH":
+            return { ...state, search: action.payload }
+
         default:
             return state;
     }
