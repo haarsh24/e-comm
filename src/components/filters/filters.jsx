@@ -12,6 +12,12 @@ const Filters = () => {
     showFilter ? setShowFilter(false) : setShowFilter(true);
     console.log(showFilter);
   };
+
+  const resetFilterHandler = (e) => {
+     e.preventDefault();
+     filterDispatch({ type: "RESET_ALL_FILTERS" });
+  }
+
   return (
     <>
       <aside className="filters-wrapper  flex-column p1">
@@ -116,7 +122,7 @@ const Filters = () => {
           </div>
           <button
             className="btn m1"
-            onClick={() => filterDispatch({ type: "RESET_ALL_FILTERS" })}
+            onClick={resetFilterHandler(e)}
           >
             RESET FILTERS
           </button>
