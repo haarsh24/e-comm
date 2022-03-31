@@ -2,23 +2,24 @@ import {
   IncreaseCartQuantity,
   DecreaseCartQuantity,
   RemoveFromCart,
+  updateWishlistItem,
 } from "../../utilities/helpers/api-calls-helper";
 import { useCart, cartDispatch } from "../../contexts/cart-context";
 import { useAuth } from "../../contexts/authContext";
 
 const CartCard = (props) => {
-    const {
-      authState: { token },
-    } = useAuth();
- 
+  const {
+    authState: { token },
+  } = useAuth();
+
   const {
     cartState: { cartItem, productsData },
     cartDispatch,
-   
+    wishlistDispatch,
   } = useCart();
 
   const data = props.item;
-  
+
   const increaseCartHandler = () => {
     cartDispatch({ type: "INCREASE_CART_ITEM", payload: data });
     IncreaseCartQuantity(data, token);
@@ -28,15 +29,21 @@ const CartCard = (props) => {
     cartDispatch({ type: "DECREASE_CART_ITEM", payload: data });
     DecreaseCartQuantity(data, token);
   };
-  
+
   const removeFromCartHandler = () => {
     cartDispatch({ type: "REMOVE_FROM_CART", payload: data });
-    RemoveFromCart(data, token)
-  }
+    RemoveFromCart(data, token);
+  };
   if (data.qty === 0) {
     cartDispatch({ type: "REMOVE_FROM_CART", payload: data });
     RemoveFromCart(data, token);
   }
+
+  const addToWishlistHandler = () => {
+    wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: data });
+    updateWishlistItem(data, token);
+  };
+
   return (
     <div className="collection-detail flex-row m2 card-container">
       <img className=" item-product" src={data.image} />
@@ -57,10 +64,16 @@ const CartCard = (props) => {
           </button>
         </div>
 
-        <button className=" btn btn-add-to-cart  m-tb-1 " onClick={removeFromCartHandler}>
+        <button
+          className=" btn btn-add-to-cart  m-tb-1 "
+          onClick={removeFromCartHandler}
+        >
           Remove from Cart
         </button>
-        <button className="  btn secondary btn-add-to-cart  ">
+        <button
+          className="  btn secondary btn-add-to-cart  "
+          onClick={addToWishlistHandler}
+        >
           Add to Wishlist
         </button>
       </div>
