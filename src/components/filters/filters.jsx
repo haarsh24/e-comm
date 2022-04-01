@@ -122,7 +122,7 @@ const Filters = () => {
           </div>
           <button
             className="btn m1"
-            onClick={resetFilterHandler(e)}
+            onClick={(e)=>resetFilterHandler(e)}
           >
             RESET FILTERS
           </button>
