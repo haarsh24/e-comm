@@ -7,7 +7,7 @@ const Filters = () => {
     filterDispatch,
     filterState: { priceRange },
   } = useCart();
-  const [showFilter, setShowFilter] = useState(true);
+  const [showFilter, setShowFilter] = useState(false);
   const showFilterHandler = () => {
     showFilter ? setShowFilter(false) : setShowFilter(true);
     console.log(showFilter);
