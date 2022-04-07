@@ -22,11 +22,9 @@
 - **Product details**
 - **Cart Management**
 - **Wishlist Management**
-- **Payment Gateway**
-- **Address Management**
 - **Authentication**
-- **Profile Page**
-- **Order Summary**
+- **Filters (sort, search,category)**
+
 
 ## Getting Started
 
@@ -35,7 +33,7 @@
 ```sh
 https://github.com/haarsh24/e-comm.git
 
-cd DeepStore-React
+cd e-comm
 ```
 
 - Install dependencies
