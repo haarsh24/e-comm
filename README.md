@@ -19,7 +19,6 @@
 
 - **Home Page**:
 - **Product Listing**
-- **Product details**
 - **Cart Management**
 - **Wishlist Management**
 - **Authentication**
