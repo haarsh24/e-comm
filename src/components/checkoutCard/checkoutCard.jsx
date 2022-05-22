@@ -1,6 +1,7 @@
 import { calculateTotalPrice } from "../../utilities/checkoutPriceCalc";
 import { useCart } from "../../contexts/cart-context";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const CheckoutCard = () => {
   const {
@@ -41,7 +42,7 @@ const CheckoutCard = () => {
               This Sneaker will Look Awesome on You .
             </div>
             <button className=" h4  btn btn-add-to-cart m-tb-1 p2 ">
-              Place Order
+          <Link to="/payment"> Place Order</Link>   
             </button>
           </div>
         </div>

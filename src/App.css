@@ -117,3 +117,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.address-modal{
+  backdrop-filter: blur(4px);
+}
+.pay-btn{
+  display: flex;
+  justify-content: center;
+}

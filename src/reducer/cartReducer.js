@@ -31,7 +31,10 @@ const cartReducer=(state,dispatch)=>{
                     qty: item.qty - 1
                 } : item)
             }
-    
+        case "INITIAL_CART":
+            return {
+                cartItem:dispatch.payload
+            }
         default:
             state;
     }
