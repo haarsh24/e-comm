@@ -13,8 +13,7 @@ const Navbar = () => {
     filterDispatch,
   } = useCart();
 
-  console.log(cartItem.length);
-  console.log(authState);
+  
   return (
     <>
       <div className="header">

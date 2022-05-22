@@ -7,6 +7,7 @@ import {Wishlist} from "./pages/wishlist/wishlist"
 import {Routes, Route} from "react-router-dom";
 import { Navbar } from "./components/navbar/navbar";
 import { Cart } from "./pages/cart/cart";
+import {AddressModal} from "./components/addressModal/addressModal"
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
        <Route path="/wishlist" element={  <Wishlist/> } />
        <Route path="/login" element={ <Login/> } />
        <Route path="/signup" element={<Signup />} />
-       <Route path="/cart" element={<Cart/>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/payment" element={<AddressModal/>}/>
      </Routes>
     
     </div>
