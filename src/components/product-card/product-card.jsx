@@ -8,12 +8,13 @@ import {
   RemoveFromWishlist,
 } from "../../utilities/helpers/api-calls-helper";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const ProductCard = (props) => {
     const [cartClicked, setCartClicked] = useState(false);
     const [wishlistClicked, setWishlistClicked] = useState(false);
   const item = props.singleProduct;
-  console.log(item);
+
   const navigate = useNavigate();
   const {
     authState: { isLogin, token },
@@ -22,6 +23,7 @@ const ProductCard = (props) => {
   const { cartDispatch, wishlistDispatch } = useCart();
 
   const addToCardHandler = () => {
+    toast.success("eeww")
     setCartClicked(true);
     if (isLogin) {
       console.log("logged in ");

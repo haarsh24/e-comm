@@ -7,6 +7,7 @@ import { ProductByCategory } from "../../components/productByCategory/productByC
 import "../../components/styles/main.css";
 import {Carousel} from "../../components/Carasoul/caraosel"
 import { ProductsList } from "../products-list/products-list";
+import { NewArrival } from "../../components/newArrival/newArrival";
 
 
 const Homepage =(props)=>{
@@ -20,7 +21,7 @@ const Homepage =(props)=>{
     <HeroSection/>
     
     <ProductByCategory/>
-    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_JYJRZBnGQvmc3c" async> </script> </form>
+   <NewArrival/>
     <Footer/>
         </>
     )

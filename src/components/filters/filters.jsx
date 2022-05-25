@@ -1,8 +1,8 @@
 import { useCart } from "../../contexts/cart-context";
 import "../styles/main.css";
 import { useState } from "react";
-
-const Filters = () => {
+import "./filter.css"
+const Filters = ({ setToggle }) => {
   const {
     filterDispatch,
     filterState: { priceRange },
@@ -20,6 +20,9 @@ const Filters = () => {
 
   return (
     <>
+      <div className="filter-hamburger" onClick={() => setToggle(pre => !pre)}>
+                <span className="material-icons"> filter_alt </span>
+            </div>
       <aside className="filters-wrapper  flex-column p1">
         <button className="btn btn-filter m1" onClick={showFilterHandler}>
           {showFilter ? "Show" : "Hide"} Filter

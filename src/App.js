@@ -10,10 +10,15 @@ import { Cart } from "./pages/cart/cart";
 import {AddressModal} from "./components/addressModal/addressModal"
 import { SingleProduct } from "./components/singleProduct/singleProduct";
 
+import { Toast } from "./components/toast/toast";
+import { ScrollTop } from "./components/scrollToTop/scrollToTop";
+
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+     <ScrollTop/>
+      <Navbar />
+      <Toast/>
      <Routes>
        <Route path="/" element={<Homepage/>}/>
        <Route path="/products" element={ <ProductsList/> }/>
