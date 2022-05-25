@@ -61,6 +61,7 @@ const CartProvider = ({
   return (
     <CartContext.Provider value={
       {
+       
         cartState,
         cartDispatch,
         filterState,

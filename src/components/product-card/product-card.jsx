@@ -54,8 +54,9 @@ const ProductCard = (props) => {
       <div className="product-collection item  ">
         <div className="collection-detail flex-column card-container p1 m2">
           <div className="product-rating  ">{item.rating}⭐</div>
+          <Link to={`/products/${item._id}`}>
           <img className=" product-img " src={item.image} />
-
+          </Link>
           <div className="product-collection-detail p1 flex-column">
             <div className="product-summary h5">{item.title}</div>
             <div className="product-price price-title flex h4 m-tb-1">

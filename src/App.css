@@ -125,3 +125,8 @@
   display: flex;
   justify-content: center;
 }
+
+.single-product-img{
+  width:28rem;
+  height:35rem;
+}
