@@ -17,6 +17,7 @@
 .product {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .filters-container {
   width: 40rem;
@@ -109,7 +110,7 @@
 .wishlist-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .wishlist-heading {

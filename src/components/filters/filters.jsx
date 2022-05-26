@@ -20,9 +20,9 @@ const Filters = ({ setToggle }) => {
 
   return (
     <>
-      <div className="filter-hamburger" onClick={() => setToggle(pre => !pre)}>
+      {/* <div className="filter-hamburger" onClick={() => setToggle(pre => !pre)}>
       <i class="fa fa-filter" aria-hidden="true"></i>
-            </div>
+            </div> */}
       <aside className="filters-wrapper  flex-column p1">
         <button className="btn btn-filter m1" onClick={showFilterHandler}>
           {showFilter ? "Show" : "Hide"} Filter
