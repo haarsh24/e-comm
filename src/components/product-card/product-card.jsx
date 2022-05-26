@@ -8,7 +8,7 @@ import {
   RemoveFromWishlist,
 } from "../../utilities/helpers/api-calls-helper";
 import { useState } from "react";
-import { toast } from "react-toastify";
+
 
 const ProductCard = (props) => {
     const [cartClicked, setCartClicked] = useState(false);
@@ -23,7 +23,7 @@ const ProductCard = (props) => {
   const { cartDispatch, wishlistDispatch } = useCart();
 
   const addToCardHandler = () => {
-    toast.success("eeww")
+    
     setCartClicked(true);
     if (isLogin) {
       console.log("logged in ");
