@@ -1,0 +1,29 @@
+.filter {
+    padding: 0 5rem;
+  }
+  .filter-hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 800px) {
+    .filter {
+      display: none;
+    }
+    .filter-hamburger {
+      display: block;
+      margin-left: auto;
+    }
+    .active .filter {
+      display: block;
+      position: fixed;
+      left: 0;
+      background-color: var(--color-grey-light-3);
+      padding: 1rem;
+      overflow: auto;
+      z-index: 3;
+    }
+    .grid-20-80 {
+      grid-template-columns: 100%;
+    }
+  }
+  

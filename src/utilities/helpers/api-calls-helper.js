@@ -1,5 +1,6 @@
 import axios from "axios"
-
+import toast from "react-hot-toast";
+import { dark } from "../../components/toast/toast";
 const getRequestDataFromServer = async (url, dispatch) => {
     try {
 
@@ -29,14 +30,14 @@ const updateCartItem = async (data, token) => {
                 authorization: token
             }
         })
-        console.log(res);
+        toast.success("Item added in cart",dark);
         const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
         dataToUpdate.cart = [...res.data.cart]
         localStorage.setItem('userData', JSON.stringify(dataToUpdate))
-        console.log(dataToUpdate);
+        
 
     } catch (error) {
-        console.log(error)
+        toast.error("Failed to add Item in cart")
     }
 }
 const RemoveFromCart = async (data, token) => {
@@ -46,12 +47,13 @@ const RemoveFromCart = async (data, token) => {
                 authorization: token
             }
         })
+        toast.success("Item removed from cart ")
         const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
         dataToUpdate.cart = [...res.data.cart]
         localStorage.setItem('userData', JSON.stringify(dataToUpdate))
         }
         catch {
-        console.log(error);
+        toast.error("Failed to remove item from cart")
         }
     
 }
@@ -68,13 +70,13 @@ const IncreaseCartQuantity = async (data, token) => {
                 authorization: token
             }
         })
-
+        toast.success("Cart Quantity increased")
         const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
         dataToUpdate.cart = [...res.data.cart]
         localStorage.setItem('userData', JSON.stringify(dataToUpdate))
 
     } catch (error) {
-        console.log(error);
+        toast.error("Failed to increase cart Quantity")
 
     }
 }
@@ -91,13 +93,13 @@ const DecreaseCartQuantity = async (data, token) => {
                 authorization: token
             }
         })
-
+        toast.success("Cart Quantity deccreased")
         const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
         dataToUpdate.cart = [...res.data.cart]
         localStorage.setItem('userData', JSON.stringify(dataToUpdate))
 
     } catch (error) {
-        console.log(error);
+        toast.error("Failed to decrease cart Quantity")
     }
 }
 
@@ -112,14 +114,14 @@ const updateWishlistItem = async (data, token) => {
                  authorization: token
              }
          })
-         console.log(res);
+         toast.success("Item added in wishlist")
          const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
          dataToUpdate.wishlist = [...res.data.wishlist]
          localStorage.setItem('userData', JSON.stringify(dataToUpdate))
-         console.log(dataToUpdate);
+         
     }
     catch {
-        console.log(error);
+        toast.error("Failed to add item in wishlist")
     }
 
 }

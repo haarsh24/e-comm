@@ -8,12 +8,13 @@ import {
   RemoveFromWishlist,
 } from "../../utilities/helpers/api-calls-helper";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const ProductCard = (props) => {
     const [cartClicked, setCartClicked] = useState(false);
     const [wishlistClicked, setWishlistClicked] = useState(false);
   const item = props.singleProduct;
-  console.log(item);
+
   const navigate = useNavigate();
   const {
     authState: { isLogin, token },
@@ -22,6 +23,7 @@ const ProductCard = (props) => {
   const { cartDispatch, wishlistDispatch } = useCart();
 
   const addToCardHandler = () => {
+    toast.success("eeww")
     setCartClicked(true);
     if (isLogin) {
       console.log("logged in ");
@@ -54,8 +56,9 @@ const ProductCard = (props) => {
       <div className="product-collection item  ">
         <div className="collection-detail flex-column card-container p1 m2">
           <div className="product-rating  ">{item.rating}⭐</div>
+          <Link to={`/products/${item._id}`}>
           <img className=" product-img " src={item.image} />
-
+          </Link>
           <div className="product-collection-detail p1 flex-column">
             <div className="product-summary h5">{item.title}</div>
             <div className="product-price price-title flex h4 m-tb-1">

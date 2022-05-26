@@ -125,3 +125,16 @@
   display: flex;
   justify-content: center;
 }
+
+.single-product-img{
+  width:28rem;
+  height:35rem;
+}
+.new-arrival{
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 2rem;
+}
+.new-arrival-wrapper{
+  margin-left: 2rem;
+}
