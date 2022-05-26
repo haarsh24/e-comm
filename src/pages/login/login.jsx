@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../components/styles/main.css";
 import { useAuth } from "../../contexts/authContext";
 import { loginFormReducer } from "../../reducer/authReducer";
-
+import toast from "react-hot-toast";
 const Login = () => {
   const navigate = useNavigate();
   const {authState, authDispatch}= useAuth();
@@ -19,7 +19,6 @@ const Login = () => {
   e.preventDefault();
   try{
   const response = await axios.post("api/auth/login", {email,password});
-  console.log(response);
 
   localStorage.setItem("token", response.data.encodedToken)
   localStorage.setItem('userData', JSON.stringify(response.data.foundUser));
@@ -27,10 +26,11 @@ const Login = () => {
   authDispatch({ type: "USER_TOKEN", payload: response.data.encodedToken })
   authDispatch({ type: "USER_DATA", payload: response.data.foundUser })
   }catch(err){
-    console.log(err);
+    toast.error(err);
   }
   finally{
     navigate("/")
+    toast.success("Welcome to SneakerXclub !" )
   }
   }
   

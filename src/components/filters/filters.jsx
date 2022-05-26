@@ -10,7 +10,7 @@ const Filters = ({ setToggle }) => {
   const [showFilter, setShowFilter] = useState(false);
   const showFilterHandler = () => {
     showFilter ? setShowFilter(false) : setShowFilter(true);
-    console.log(showFilter);
+  
   };
 
   const resetFilterHandler = (e) => {
@@ -21,7 +21,7 @@ const Filters = ({ setToggle }) => {
   return (
     <>
       <div className="filter-hamburger" onClick={() => setToggle(pre => !pre)}>
-                <span className="material-icons"> filter_alt </span>
+      <i class="fa fa-filter" aria-hidden="true"></i>
             </div>
       <aside className="filters-wrapper  flex-column p1">
         <button className="btn btn-filter m1" onClick={showFilterHandler}>

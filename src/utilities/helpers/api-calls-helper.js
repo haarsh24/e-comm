@@ -1,5 +1,6 @@
 import axios from "axios"
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+import { dark } from "../../components/toast/toast";
 const getRequestDataFromServer = async (url, dispatch) => {
     try {
 
@@ -29,7 +30,7 @@ const updateCartItem = async (data, token) => {
                 authorization: token
             }
         })
-        toast.success(<p>Item added in cart</p>);
+        toast.success("Item added in cart",dark);
         const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
         dataToUpdate.cart = [...res.data.cart]
         localStorage.setItem('userData', JSON.stringify(dataToUpdate))
@@ -46,13 +47,13 @@ const RemoveFromCart = async (data, token) => {
                 authorization: token
             }
         })
-        toast.info("Item removed from cart ")
+        toast.success("Item removed from cart ")
         const dataToUpdate = JSON.parse(localStorage.getItem('userData'))
         dataToUpdate.cart = [...res.data.cart]
         localStorage.setItem('userData', JSON.stringify(dataToUpdate))
         }
         catch {
-        toast.errot("Failed to remove item from cart")
+        toast.error("Failed to remove item from cart")
         }
     
 }

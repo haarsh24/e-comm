@@ -1,22 +1,18 @@
-import React from 'react'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ReactDOM from "react-dom"
+import { Toaster } from "react-hot-toast";
 
 const Toast = () => {
-    return ReactDOM.createPortal(
-        <ToastContainer
-            position='top-right'
-            autoClose={1200}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            limit={5}
-            pauseOnFocusLoss
-            draggable
-          
-            pauseOnHover />, document.getElementById("modal")
+    return (
+        <Toaster
+        position="top-right"         
+      />
     )
 }
-
-export { Toast }
+const dark= {
+ 
+    style: {
+      borderRadius: '10px',
+      background: '#fff',
+      color: '#0D1117',
+    },
+  }
+export { Toast ,dark}
