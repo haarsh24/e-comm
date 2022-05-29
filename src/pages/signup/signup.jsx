@@ -5,29 +5,35 @@ import { Navbar } from "../../components/navbar/navbar";
 import "../../components/styles/main.css";
 import { signupFormReducer } from "../../reducer/authReducer";
 import { useAuth } from "../../contexts/authContext";
-
+import toast from "react-hot-toast";
 const Signup = ()=>{
     const navigate = useNavigate();
-    const {authDispatch}= useAuth();
+    const {authDispatch }= useAuth();
     const [{firstName,lastName, email,password},signupDispatch] = useReducer(signupFormReducer, {firstName:"",lastName:"",email:"", password:""});
     const submitHandler= async (e, firstName,lastName, email,password)=>{
      e.preventDefault();
      try{
      const response = await axios.post("api/auth/signup", {firstName,lastName,email,password});
-     console.log(response);
+    
      localStorage.setItem("token", response.data.encodedToken)
-     localStorage.setItem('userData', JSON.stringify(response.data.createdUser));
-     authDispatch({ type: "ADD_TOKEN", payload: response.data.encodedToken })
+         localStorage.setItem('userData', JSON.stringify(response.data.createdUser));
+        
+         
+         authDispatch({ type: "USER_LOGIN" })
+         authDispatch({ type: "USER_TOKEN", payload: response.data.encodedToken })
+         authDispatch({ type: "USER_DATA", payload: response.data.createdUser })
+         
     }
     catch(err){
-      console.log(err);
+         toast.error(err);
     }
     finally{
-      navigate("/")
+         navigate("/");
+        
     
     }
 }
-
+    
     return( 
         <>  
       <div id="signup-container" className=" auth signup-container">
@@ -48,7 +54,8 @@ const Signup = ()=>{
                 <label className="ml-2" htmlFor="name"> Password </label>
                 <input className="input-text " type="password" value={password} placeholder="Enter your Password here"
                  onChange={(e)=> signupDispatch({type:"SET_PASSWORD",payload:e.target.value})}/>
-                <button className="input-text btn  h4" type="submit">Sign up</button>
+                    <button className="input-text btn  h4" type="submit">Sign up</button>
+                   
                 <p className=" input-text small-text">Already have an Account <span id="login" className="link-redirect "><Link
                             to="/login">Log In</Link>
                     </span>
