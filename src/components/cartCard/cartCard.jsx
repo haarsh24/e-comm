@@ -6,7 +6,7 @@ import {
 } from "../../utilities/helpers/api-calls-helper";
 import { useCart, cartDispatch } from "../../contexts/cart-context";
 import { useAuth } from "../../contexts/authContext";
-
+import toast from "react-hot-toast";
 const CartCard = (props) => {
   const {
     authState: { token },
@@ -16,6 +16,7 @@ const CartCard = (props) => {
     cartState: { cartItem, productsData },
     cartDispatch,
     wishlistDispatch,
+    wishlistState:{wishlistItem}
   } = useCart();
 
   const data = props.item;
@@ -38,11 +39,16 @@ const CartCard = (props) => {
     cartDispatch({ type: "REMOVE_FROM_CART", payload: data });
     RemoveFromCart(data, token);
   }
-
-  const addToWishlistHandler = () => {
-    wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: data });
-    updateWishlistItem(data, token);
-  };
+  const moveToWishlistHandler = () => {
+    if (wishlistItem.find(item => item.id === data.id)) {
+    toast.error("Item already present in wishlist")
+    } else {
+      wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: data });
+      updateWishlistItem(data, token);
+    }
+    
+}
+  
 
   return (
     <div className="collection-detail flex-row m2 card-container">
@@ -72,7 +78,7 @@ const CartCard = (props) => {
         </button>
         <button
           className="  btn secondary btn-add-to-cart  "
-          onClick={addToWishlistHandler}
+          onClick={moveToWishlistHandler}
         >
           Add to Wishlist
         </button>

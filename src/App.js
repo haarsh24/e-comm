@@ -13,6 +13,7 @@ import { SingleProduct } from "./components/singleProduct/singleProduct";
 
 import { ScrollTop } from "./components/scrollToTop/scrollToTop";
 import { Toast } from "./components/toast/toast";
+import { PrivateRoute } from "./components/privateRoute/privateRoute";
 
 function App() {
   return (
@@ -21,14 +22,16 @@ function App() {
       <Navbar />
   <Toast />
      <Routes>
-       <Route path="/" element={<Homepage/>}/>
-       <Route path="/products" element={ <ProductsList/> }/>
-       <Route path="/wishlist" element={  <Wishlist/> } />
-       <Route path="/login" element={ <Login/> } />
-       <Route path="/signup" element={<Signup />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/payment" element={<AddressModal />} />
-        <Route path="/products/:productId" element={<SingleProduct/>}/>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/login" element={ <Login/> } />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/products/:productId" element={<SingleProduct />} />
+        <Route path="/products" element={ <ProductsList/> }/>
+        <Route path="/" element={<PrivateRoute/>}>
+          <Route path="/wishlist" element={  <Wishlist/> } />
+          <Route path="/cart" element={<Cart />} />
+            <Route path="/payment" element={<AddressModal />} />
+        </Route>
      </Routes>
     
     </div>

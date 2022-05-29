@@ -5,12 +5,12 @@ import {
   RemoveFromWishlist,
   updateCartItem,
 } from "../../utilities/helpers/api-calls-helper";
-
+import toast from "react-hot-toast";
 const WishlistItem = (props) => {
       const {
         authState: { token },
       } = useAuth();
-    const { wishlistDispatch, cartDispatch } = useCart();
+    const { wishlistDispatch, cartDispatch , cartState:{cartItem}} = useCart();
     
   console.log(props);
 
@@ -20,9 +20,12 @@ const WishlistItem = (props) => {
         RemoveFromWishlist(item,token)
     }
     const addToCardHandler = () => {
-     
+      if (cartItem.find(data => data.id === item.id)) {
+        toast.error("Item already present in Cart")
+      } else {
         cartDispatch({ type: "ADD_TO_CART", payload: item });
         updateCartItem(item, token);
+      }
       } 
     
   return (
